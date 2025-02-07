@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: p5d565n1o-go-gitops
+  description: This is GitOps manifest for p5d565n1o-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=p5d565n1o-go
+    backstage.io/kubernetes-id: p5d565n1o-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: p5d565n1o-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:p5d565n1o-go
